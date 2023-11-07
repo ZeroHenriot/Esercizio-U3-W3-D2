@@ -19,8 +19,6 @@ const MainSearch = () => {
     setQuery(e.target.value)
   }
 
-  useEffect(() => {})
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     dispatch(getJobsAction(baseEndpoint, query))

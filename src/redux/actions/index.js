@@ -34,5 +34,3 @@ export const getJobsAction = (baseEndpoint, query) => {
     }
   }
 }
-
-export default getJobsAction
