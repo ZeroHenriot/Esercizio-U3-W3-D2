@@ -1,7 +1,7 @@
 import { ADD_TO_FAVOURITES, REMOVE_FROM_FAVOURITES } from '../actions'
 
 const initialState = {
-  jobs: [],
+  content: [],
 }
 
 const favouritesReducer = (state = initialState, action) => {
@@ -9,18 +9,12 @@ const favouritesReducer = (state = initialState, action) => {
     case ADD_TO_FAVOURITES:
       return {
         ...state,
-        favourites: {
-          ...state.favourites,
-          jobs: [...state.favourites.jobs, action.payload],
-        },
+        content: [...state.content, action.payload],
       }
     case REMOVE_FROM_FAVOURITES:
       return {
         ...state,
-        favourites: {
-          ...state.favourites,
-          jobs: state.favourites.jobs.filter((job, i) => i !== action.payload),
-        },
+        content: [...state.content.filter((job, i) => i !== action.payload)],
       }
     default:
       return state

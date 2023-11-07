@@ -8,8 +8,10 @@ import getJobsAction from '../redux/actions'
 
 const MainSearch = () => {
   const dispatch = useDispatch()
-  const jobsFromRedux = useSelector((state) => state.jobs)
-  console.log(jobsFromRedux)
+  const jobsFromRedux = useSelector((state) => {
+    return state.jobs.content
+  })
+  // console.log(jobsFromRedux)
   const [query, setQuery] = useState('')
   // const [jobs, setJobs] = useState([])
 

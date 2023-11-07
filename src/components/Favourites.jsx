@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { removeFromFavourtesAction } from '../redux/actions'
 
 const Favourites = () => {
-  const favourites = useSelector((state) => state.favourites.jobs)
+  const favourites = useSelector((state) => state.favourites.content)
   const dispatch = useDispatch()
   console.log(favourites)
 
@@ -17,7 +17,6 @@ const Favourites = () => {
             <li key={i} className="my-4">
               <Heartbreak
                 style={{ cursor: 'pointer' }}
-                onMouseOver="color='red'"
                 onClick={() => {
                   dispatch(removeFromFavourtesAction(i))
                 }}

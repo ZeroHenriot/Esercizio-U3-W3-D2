@@ -6,7 +6,7 @@ import { addToFavourtesAction } from '../redux/actions'
 
 const Job = ({ data }) => {
   const dispatch = useDispatch()
-  console.log(data)
+  // console.log(data)
   return (
     <>
       <Row

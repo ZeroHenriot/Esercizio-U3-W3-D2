@@ -21,10 +21,10 @@ export const getJobsAction = (baseEndpoint, query) => {
     try {
       let resp = await fetch(baseEndpoint + query + '&limit=20')
       if (resp.ok) {
-        let fetchedJobs = await resp.json()
+        let { data } = await resp.json()
         dispatch({
           type: GET_JOBS,
-          payload: fetchedJobs,
+          payload: data,
         })
       } else {
         throw new Error('errore nel recupero dei libri')
@@ -34,3 +34,5 @@ export const getJobsAction = (baseEndpoint, query) => {
     }
   }
 }
+
+export default getJobsAction
